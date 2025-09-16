@@ -1,0 +1,309 @@
+
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charSet="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,viewport-fit=cover"/>
+  <meta property="og:title" content="차 보험 계산기 | 자동차 보험료 알아보기 & 견적 비교"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="/"/>
+  <meta property="og:image" content="https://financial.pstatic.net/insurance/insurance_car.png"/>
+  <meta name="description" content="자동차 보험료를 빠르고 정확하게 계산해 보세요. 차종, 운전 경력, 보험 종류 입력만으로 예상 보험료를 확인하고, 보험사 할인 항목, 유의사항까지 알려드립니다.">
+   
+  <meta itemprop="description" content="차 보험 계산기 | 자동차 보험료 알아보기 & 견적 비교" />
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="차 보험 계산기 | 자동차 보험료 알아보기 & 견적 비교"/>
+  <meta name="twitter:url" content="/"/>
+  <meta name="twitter:image" content="https://financial.pstatic.net/insurance/insurance_car.png"/>
+  <meta name="twitter:description" content="차 보험 계산기 | 자동차 보험료 알아보기 & 견적 비교"/>
+  
+  <meta name="robots" content="index,nofollow" />
+  <meta name="NaverBot" content="index,nofollow" />
+  <meta name="Yeti" content="index,nofollow" />
+  <meta name="googlebot" content="index,nofollow" />
+  
+  <meta name="subject" content="차 보험 계산기 | 자동차 보험료 알아보기 & 견적 비교" />
+  <meta name="publisher" content="차 보험 계산기 | 자동차 보험료 알아보기 & 견적 비교" />
+  <meta name="Other Agent" content="차 보험 계산기 | 자동차 보험료 알아보기 & 견적 비교" />
+  <meta name="location" content="South Korea" />
+  <meta name="distribution" content="global" />
+  <meta name="rating" content="general" />
+  <meta itemprop="name" content="" />
+  
+    <link rel="stylesheet" href="./Img/reset.css">
+    <link rel="stylesheet" href="./Img/main.css">
+    <link rel="stylesheet" href="./common/swiper.css" />
+    <script src="./jquery.min.js"></script>
+    <script src="./jquery.serializeObject.min.js"></script>
+    <script src="./json3.min.js"></script>
+    <script src="./bxslider.js" type="text/javascript"></script>
+    <script src="./common/moment.min.js"></script>
+  
+  
+  <title>차 보험 계산기 | 자동차 보험료 알아보기 & 견적 비교</title>
+  
+  <meta name="next-head-count" content="25"/>
+  <meta name="format-detection" content="telephone=no"/>
+  
+  
+  
+
+  <!-- 스타일: 부드러운 색감, 명확한 시각 계층 -->
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f8fafd;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section h2 {
+      font-size: 2em;
+      color: #4a90e2;
+      border-bottom: 2px solid #4a90e2;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .calc-form {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .calc-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .calc-form input, .calc-form select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .calc-form button {
+      background-color: #4a90e2;
+      color: white;
+      font-size: 1.2em;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .calc-form button:hover {
+      background-color: #357ab8;
+    }
+    .result-box {
+      background-color: #eef7ff;
+      border: 1px solid #4a90e2;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 1.5em;
+      color: #1a2d5f;
+    }
+    .faq {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .faq h3 {
+      margin-top: 0;
+    }
+    .faq dt {
+      font-weight: bold;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .faq dd {
+      margin-left: 20px;
+      display: none;
+    }
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9em;
+      margin: 40px 0;
+    }
+  </style>
+
+  <!-- 스크립트: 입력폼 동작, FAQ 토글 등 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var faqItems = document.querySelectorAll('.faq dt');
+      faqItems.forEach(function(dt) {
+        dt.addEventListener('click', function() {
+          var dd = dt.nextElementSibling;
+          if (dd.style.display === 'block') {
+            dd.style.display = 'none';
+          } else {
+            dd.style.display = 'block';
+          }
+        });
+      });
+      var form = document.getElementById('insurance-calc-form');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // 계산 로직 (예: 자바스크립트로 보험료 계산)
+        var carType = form.carType.value;
+        var carAge = parseInt(form.carAge.value,10);
+        var driverAge = parseInt(form.driverAge.value,10);
+        var insuranceType = form.insuranceType.value;
+        var base = 200000; // 예시 기본요율
+        // 예시 계산: 보험료 = 기본 * 요율계수
+        var coeff = 1;
+        if (carType === '소형') coeff *= 0.9;
+        if (carType === '중형') coeff *= 1.1;
+        if (carAge > 5) coeff *= 1.2;
+        if (driverAge < 25) coeff *= 1.5;
+        if (insuranceType === '완전보험') coeff *= 1.3;
+        var result = base * coeff;
+        document.getElementById('result').innerText = result.toLocaleString() + ' 원';
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>차 보험 계산기</h1>
+    <p>자동차 보험료를 신속하게 예측해보고 가장 합리적인 보험을 선택하세요</p>
+  </header>
+
+  <div class="container">
+
+    <!-- 보험료 계산 입력 폼 -->
+    <section class="section">
+      <h2>보험료 계산하기</h2>
+      <div class="calc-form">
+        <form id="insurance-calc-form">
+          <label for="carType">차종 선택</label>
+          <select id="carType" name="carType" required>
+            <option value="소형">소형</option>
+            <option value="중형">중형</option>
+            <option value="SUV">SUV</option>
+            <option value="대형">대형</option>
+          </select>
+
+          <label for="carAge">차량 연식 (년)</label>
+          <input type="number" id="carAge" name="carAge" min="0" max="30" value="1" required>
+
+          <label for="driverAge">운전자 나이</label>
+          <input type="number" id="driverAge" name="driverAge" min="18" max="100" value="30" required>
+
+          <label for="insuranceType">보험 종류</label>
+          <select id="insuranceType" name="insuranceType" required>
+            <option value="책임보험">책임보험</option>
+            <option value="자차보험">자차보험</option>
+            <option value="완전보험">완전보험</option>
+          </select>
+
+          <button type="submit">계산하기</button>
+        </form>
+        <div class="result-box" id="result">
+          보험료 예상 금액이 여기에 표시됩니다.
+        </div>
+      </div>
+    </section>
+
+    <!-- 보험료 결정 요인 설명 -->
+    <section class="section">
+      <h2>보험료에 영향을 주는 요소들</h2>
+      <ul>
+        <li><strong>차종 및 배기량:</strong> 소형/중형/SUV/대형 등에 따라 보험사 위험 평가가 다릅니다.</li>
+        <li><strong>차량 연식:</strong> 오래된 차량일수록 수리비 상승 리스크, 부품 단종 가능성 등이 보험료 상승 요소입니다.</li>
+        <li><strong>운전자 나이 및 경력:</strong> 운전 경력이 짧거나 나이가 어릴수록 사고 가능성이 높아 보험료가 올라갑니다.</li>
+        <li><strong>보험 종류 & 보장 범위:</strong> 책임보험 vs 자차보험 vs 완전보험 (보상한도, 면책금 여부 등).</li>
+        <li><strong>보험사 할인 항목:</strong> 무사고 할인, 블랙박스 장착, 안전장치, 연납 할인 등.</li>
+        <li><strong>사용 목적 및 주행 거리:</strong> 출퇴근, 영업용 여부, 연간 주행거리 등이 반영됩니다.</li>
+      </ul>
+    </section>
+
+    <!-- 보험료 예시 비교 -->
+    <section class="section">
+      <h2>보험료 예시 비교</h2>
+      <table border="1" cellpadding="10" cellspacing="0" width="100%">
+        <thead style="background-color:#4a90e2; color:white;">
+          <tr>
+            <th>차종</th><th>나이</th><th>보험 종류</th><th>예상 보험료 (연간)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>소형 / 차령 2년 / 운전자 30세 / 책임보험</td>
+            <td>30세</td>
+            <td>책임보험</td>
+            <td>₩180,000</td>
+          </tr>
+          <tr style="background-color:#eef7ff;">
+            <td>중형 / 차령 6년 / 운전자 22세 / 자차보험</td>
+            <td>22세</td>
+            <td>자차보험</td>
+            <td>₩320,000</td>
+          </tr>
+          <tr>
+            <td>SUV / 차령 3년 / 운전자 50세 / 완전보험</td>
+            <td>50세</td>
+            <td>완전보험</td>
+            <td>₩650,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq">
+      <h2>자주 묻는 질문</h2>
+      <dl>
+        <dt>책임보험과 자차보험의 차이점은 무엇인가요?</dt>
+        <dd>책임보험은 타인에 대한 손해만 보상하며, 자차보험은 내 차량의 손해도 보상합니다...</dd>
+
+        <dt>보험료 할인 항목이 무엇이 있나요?</dt>
+        <dd>무사고 할인, 블랙박스, 안전장치(에어백, ABS), 연납 할인, 복수 보험 가입 시 할인 등이 있습니다.</dd>
+
+        <dt>보험료 계산 시 꼭 확인해야 하는 항목은?</dt>
+        <dd>차량 가격, 부품 수급 가능성, 보험 면책금 여부, 사고 이력, 운전자 연령 및 경력 등이 중요합니다.</dd>
+
+        <dt>사고 발생 시 보상 한도는 어떻게 되나요?</dt>
+        <dd>보험 약관에 따라 상이하며, 일반적으로 책임보험 최소 한도, 자차보험 최대 한도 등이 정해져 있습니다...</dd>
+      </dl>
+    </section>
+
+    <!-- 추가 자료 / 외부링크 -->
+    <section class="section">
+      <h2>더 알아보기: 공신력 있는 자료 출처</h2>
+      <ul>
+        <li><a href="https://www.fss.or.kr" target="_blank">금융감독원 – 보험 관련 통계 및 소비자 안내</a></li>
+        <li><a href="https://www.kidi.or.kr" target="_blank">보험개발원 – 자동차 보험료 산출 및 위험 평가</a></li>
+        <li><a href="https://www.molit.go.kr" target="_blank">국토교통부 – 자동차 등록 / 사고 통계</a></li>
+        <li><a href="https://www.koroad.or.kr" target="_blank">도로교통공단 – 교통사고 발생 및 차량 안전 정보</a></li>
+        <li><a href="https://www.law.go.kr" target="_blank">정부법령정보센터 – 자동차손해배상보장법 등 관련 법령</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    &copy; 2025 자동차보험정보 포털 | 모든 정보는 참고용이며 최종 보험료는 보험사 약관에 따라 다릅니다.
+  </footer>
+
+</body>
+</html>
+
+  
